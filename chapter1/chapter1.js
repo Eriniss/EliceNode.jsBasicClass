@@ -39,19 +39,7 @@
 }
 
 
-// Async/Await 방식
-{
-  async function doSomething() => {
-    const r1 = await promise1();
-    const r2 = await promise2(r1);
-    const r3 = await promise3(r1, r2);
-    
-    return r3;
-  }
-}
-
-
-// try...catch
+// async/await와 try...catch
 {
   async function doSomething(msg) {
     try {
