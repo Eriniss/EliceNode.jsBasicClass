@@ -43,3 +43,17 @@
 // npm init 으로 시작하기
 // Express.js를 처음부터 작성할 수 있는 방법
 // 직접 모든 구조를 작성해야 하기 때문에 Express.js를 처음 접하는 사용자에겐 쉽지 않음
+
+
+// express-generator 사용하기
+// Express.js는 express-generator 라고 하는 프로젝트 생성기를 제공함
+// express-generator를 사용하면 프로젝트의 기본구조를 자동으로 생성해줌
+// 빠르게 프로젝트를 시작하기 좋은 방법
+// 생성된 프로젝트는 npm start로 실행 가능
+
+
+// npx + express-generator 사용하기
+// npx를 사용하여 express-generator를 설치하지 않고, 바로 사용 가능.
+// express-generator는 프로젝트 생성 이후엔 사용되지 않기 때문에, npx를 사용하는 것도 좋은 방법
+
+
