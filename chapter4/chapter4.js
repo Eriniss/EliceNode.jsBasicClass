@@ -109,3 +109,41 @@
     res.send('Error Occurred');
   })
 }
+
+
+// 함수형 Middleware
+{
+  const auth = (memberType) => {
+    return (req, res, next) => {
+      if (!checkMember(req, memberType)) {
+        next(new Error('member not ${memberType}'));
+        return;
+      }
+      next();
+    }
+  }
+
+  app.use('/admin', auth('admin'), adminRouter);
+
+  app.use('/users', auth('member'), userRouter);
+}
+// auth 함수는 미들웨어 함수를 반환하는 함수
+// auth 함수 실행 시 미들웨어의 동작이 결정되는 방식으로 작성 됨
+// 일반적으로 동일한 로직에 설정 값만 다르게 미들웨어를 사용하고 싶을 경우에 활용 됨
+
+
+// Middleware Libraries
+// Express.js는 다양한 미들웨어들이 이미 만들어져 라이브러리로 제공됨
+// 유용한 미들웨어를 npm을 통해 추가하여 사용할 수 있음
+// Express.js 홈페이지나 npm 온라인 저장소에서 찾아볼 수 있음
+
+
+// Middleware 요약
+// 미들웨어는 HTTP 요청과 응답 사이에서 동작하는 함수
+// req, res, next를 인자로 갖는 함수는 미들웨어로 동작할 수 있음
+// app 혹은 router 객체에 연결해서 사용 가능
+// next에 인자를 넘기는 경우 오류처리 미들웨어가 실행 됨
+// 미들웨어에 값을 설정하고 싶은 경우는 함수형 미들웨어로 작성 가능
+
+
+
