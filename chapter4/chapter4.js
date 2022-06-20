@@ -158,10 +158,49 @@
 // REST를 정확하게 구현하기 위해선 많은 제한조건이 있지만 기본적인 REST 가이드를 따르면 조금 더 좋은 구조의 API를 구성할 수 있음
 
 
-// REST AIP 기본 가이드
+// REST AIP 기본 가이드 - HTTP method
 // REST API는 API의 동작을 HTTP method + 명사형 URL로 표현함
 // /post라는 URL은 '게시글' 이라는 자원을 가리킨다고 할때 GET(취득), POST(생성), PUT(수정), DELETE(삭제)의 HTTP method와 결합하여 API 동작을 정의하여야 함
 
 
+// REST AIP 기본 가이드 - URL 표현법
+// REST AIP URL의 자원은 복수형으로 표현되며 하나의 자원에 대한 접근은 복수형 + 아이디를 통해 특정 자원에 접근
+// /post는 '게시글 전체' 를 칭하는 URL 이라고 할떄 /post/1은 '1번 게시글' 이라는 자원을 표현함
+
+
+// REST AIP 기본 가이드 - 계층적 자원
+// REST API는 ARL을 통해 자원을 계층적으로 표현함
+// /users/1/posts라는 URL은 '1번 유저의 게시글 전체' 라는 자원을 나타냄
+
+
+// REST API 정리
+// REST API는 REST 아키텍쳐를 준수하는 웹 API를 의미함
+// URL을 통한 자원의 표현 방법과, HTTP method를 통한 API 동작의 정의 정도만 사용해도 훌륭한 REST API를 구현할 수 있음
+
+
+// * JSON
+
+
+// JSON이란?
+// 자바스크립트에서 객체를 표현하는 표현식으로 시작함
+// 데이터를 표현하는 방법이 단순하고 이해하기 쉬워서 웹 API에서 데이터를 전송할 떄 표현식으로 주로 사용됨
+
+
+// JSON을 사용하는 이유
+// 웹 API는 기본적으로 데이터를 문자열로 전송하게 됨
+// 어떤 객체를 웹 API를 통해서 문자열로 전달하기 위해 JSON을 사용함
+
+// JSON 사용방법
+{
+  [
+    { "name": "cat", "legs": 4 },
+    { "name": "chicken", "name": 2},
+  ]
+}
+// JSON에서 Oject는 { "key": value }로 표현함
+// value에는 어떤 값이라도 사용될 수 있음
+
+// JSON 에서 Array는 [item1, item2]로 표현함
+// item에는 어떤 값이라도 사용될 수 있음
 
 
